@@ -15,33 +15,18 @@ public class WhiteCell extends Actor
     public void act() 
     {
         checkKeyPress();
-        checkCollision();
     }
-
+    
     /**
      * Check whether a keyboard key has been pressed and react if it has.
      */
-    private void checkCollision(){
-        if(isTouching(Virus.class))
-        {
-            removeTouching(Virus.class);
-            Greenfoot.playSound("Cartoon Winning Sound Effect.mp3");
-            Greenfoot.stop();
-        }
-    }
-
     private void checkKeyPress()
     {
         if (Greenfoot.isKeyDown("up")) 
         {
             setLocation(getX(), getY()-4);
         }
-        if (Greenfoot.isKeyDown("left")){
-            setLocation(getX()-4,getY());   
-        }
-        if (Greenfoot.isKeyDown("right")){
-            setLocation(getX()+4,getY());   
-        }
+        
         if (Greenfoot.isKeyDown("down")) 
         {
             setLocation(getX(), getY()+4);

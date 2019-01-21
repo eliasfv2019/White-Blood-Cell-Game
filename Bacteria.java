@@ -23,10 +23,10 @@ public class Bacteria extends Actor
     {
         setLocation(getX()-2, getY());
         turn(1);
+        
         if (getX() == 0) 
         {
             getWorld().removeObject(this);
-            Greenfoot.playSound("slurp.wav");
         }
     }
 }
