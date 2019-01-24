@@ -7,11 +7,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Michael Kölling
  * @version 0.1
  */
+
 public class Bacteria extends Actor
 {
+    
     /**
      * Constructor. Nothing to do so far.
      */
+    
     public Bacteria()
     {
     }
@@ -19,14 +22,17 @@ public class Bacteria extends Actor
     /**
      * Float along the bloodstream, slowly rotating.
      */
+    private int Speed = Greenfoot.getRandomNumber(4)+1;
     public void act() 
     {
-        setLocation(getX()-2, getY());
+        setLocation(getX()-Speed, getY());
         turn(1);
         
         if (getX() == 0) 
         {
             getWorld().removeObject(this);
+            Greenfoot.playSound("slurp.wav");
         }
+       
     }
 }
