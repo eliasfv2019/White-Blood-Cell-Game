@@ -16,7 +16,7 @@ public class Bloodstream extends World
     public Bloodstream()
     {    
         super(780, 360, 1); 
-
+        setPaintOrder(Border.class, WhiteCell.class, Virus.class, Bacteria.class, Blood.class,Lining.class);
         prepare();
     }
 
@@ -28,14 +28,19 @@ public class Bloodstream extends World
         if (Greenfoot.getRandomNumber(100) < 3)
         {
             addObject(new Bacteria(), 779, Greenfoot.getRandomNumber(360));
-            if(Greenfoot.getRandomNumber(10) < 9.9){
+            if(Greenfoot.getRandomNumber(100) < 9){
                 addObject(new Virus(), 779, Greenfoot.getRandomNumber(360));
 
             }
         }
-        if(Greenfoot.getRandomNumber(100) <2) {
+        if(Greenfoot.getRandomNumber(100) < 2) {
             addObject(new Blood(),779,Greenfoot.getRandomNumber(360));
             addObject(new Blood(),779,Greenfoot.getRandomNumber(360));
+            addObject(new Blood(),779,Greenfoot.getRandomNumber(360));
+        }
+        if(Greenfoot.getRandomNumber(100) < 3) {
+            addObject(new Lining(), 779, 0);
+            addObject(new Lining(), 779, 360);
         }
     }
 
@@ -47,6 +52,10 @@ public class Bloodstream extends World
     {
         WhiteCell whitecell = new WhiteCell();
         addObject(whitecell, 83, 179);
+        Border border1 = new Border();
+        addObject(border1,790,180);
+        Border border2 = new Border();
+        addObject(border2,0,180);
         Lining lining = new Lining();
         addObject(lining, 126, 1);
         Lining lining2 = new Lining();

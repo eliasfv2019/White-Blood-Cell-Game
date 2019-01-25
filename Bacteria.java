@@ -10,11 +10,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Bacteria extends Actor
 {
-    
+
     /**
      * Constructor. Nothing to do so far.
      */
-    
+
     public Bacteria()
     {
     }
@@ -27,12 +27,12 @@ public class Bacteria extends Actor
     {
         setLocation(getX()-Speed, getY());
         turn(1);
-        
+
         if (getX() == 0) 
         {
             getWorld().removeObject(this);
             Greenfoot.playSound("slurp.wav");
         }
-       
+
     }
 }
